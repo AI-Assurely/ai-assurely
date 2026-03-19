@@ -76,7 +76,7 @@ for i, test in enumerate(test_cases):
         response_text=test['response']
     )
     
-    print("📊 Immediate Risk Signals:")
+    print("Immediate Risk Signals:")
     print(f"  Status: {result['status']}")
     print(f"  Latency: {round(result['latency'], 4)}s")
     print()
@@ -84,7 +84,7 @@ for i, test in enumerate(test_cases):
     # Behavioral metadata
     if result['behavioral_metadata']:
         bm = result['behavioral_metadata']
-        print("🧠 Behavioral Risk:")
+        print("Behavioral Risk:")
         print(f"  Hallucination Score: {bm['hallucination_score']}")
         print(f"  Toxicity Score: {bm['toxicity_score']}")
         print(f"  Safety Violation Score: {bm['safety_violation_score']}")
@@ -95,7 +95,7 @@ for i, test in enumerate(test_cases):
     # Privacy metadata
     if result['privacy_metadata']:
         pm = result['privacy_metadata']
-        print("🔒 Privacy Risk:")
+        print("Privacy Risk:")
         print(f"  PII Detected: {pm['pii_detected']} (Count: {pm['pii_count']})")
         print(f"  PII Types: {pm['pii_types']}")
         print(f"  Sensitive Terms: {pm['sensitive_terms_detected']} (Count: {pm['sensitive_term_count']})")
@@ -114,8 +114,8 @@ print()
 
 all_risks = rg.compute_all_risks()
 
-print(f"📈 Overall Risk Score: {all_risks['overall_risk_score']}")
-print(f"📊 Total Requests: {all_risks['request_volume']}")
+print(f"Overall Risk Score: {all_risks['overall_risk_score']}")
+print(f"Total Requests: {all_risks['request_volume']}")
 print()
 
 print("⚡ Reliability Metrics:")
@@ -133,7 +133,4 @@ for key, value in all_risks['privacy'].items():
     print(f"  {key}: {value}")
 print()
 
-print("=" * 60)
-print("✅ Demo Complete")
-print("=" * 60)
 
